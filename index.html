@@ -3,17 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>دعوة زفاف - أحمد سامي</title>
+<title>دعوة زفاف</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
   :root{
     --wine:#5c1f2e;
     --wine-deep:#3c1420;
-    --rose-gold:#c9a17a;
-    --rose-gold-light:#e6cba8;
+    --gold:#b8905f;
+    --gold-light:#e6cba8;
     --cream:#faf3e9;
     --ink:#2b1b1f;
+    --muted:#7a6a6e;
     --blush:#e9c9c2;
   }
 
@@ -22,237 +23,250 @@
   body{
     min-height:100vh;
     background:
-      radial-gradient(circle at 15% 10%, rgba(201,161,122,.20), transparent 45%),
-      radial-gradient(circle at 85% 90%, rgba(92,31,46,.18), transparent 45%),
+      radial-gradient(circle at 12% 8%, rgba(184,144,95,.16), transparent 42%),
+      radial-gradient(circle at 88% 92%, rgba(92,31,46,.14), transparent 42%),
       var(--cream);
+    background-image:
+      radial-gradient(circle at 12% 8%, rgba(184,144,95,.16), transparent 42%),
+      radial-gradient(circle at 88% 92%, rgba(92,31,46,.14), transparent 42%),
+      radial-gradient(rgba(92,31,46,.05) 1px, transparent 1px),
+      var(--cream);
+    background-size: auto, auto, 18px 18px, auto;
     font-family:'Tajawal',sans-serif;
     color:var(--ink);
     display:flex;
     align-items:center;
     justify-content:center;
-    padding:32px 16px;
+    padding:40px 16px;
     overflow-x:hidden;
   }
 
   .card{
     position:relative;
     width:100%;
-    max-width:640px;
+    max-width:660px;
     background:linear-gradient(180deg,#fffdfa 0%, var(--cream) 100%);
-    border:1px solid var(--rose-gold-light);
-    border-radius:6px;
-    padding:56px 40px 48px;
-    box-shadow:0 30px 60px -20px rgba(60,20,32,.35), 0 0 0 6px #fff, 0 0 0 7px var(--rose-gold-light);
+    border-radius:4px;
+    padding:60px 44px 52px;
+    box-shadow:0 40px 80px -30px rgba(60,20,32,.4), 0 0 0 1px rgba(184,144,95,.25);
     opacity:0;
     transform:translateY(24px);
-    animation:riseIn 1.1s cubic-bezier(.19,1,.22,1) forwards;
+    animation:riseIn 1s cubic-bezier(.19,1,.22,1) forwards;
   }
 
-  @keyframes riseIn{
-    to{opacity:1; transform:translateY(0);}
-  }
+  @keyframes riseIn{ to{opacity:1; transform:translateY(0);} }
 
-  /* corner ornaments */
-  .corner{
+  /* animated hand-drawn double frame */
+  .frame{
     position:absolute;
-    width:78px;
-    height:78px;
-    opacity:.85;
+    inset:14px;
+    pointer-events:none;
   }
-  .corner svg{width:100%;height:100%;}
-  .tl{top:10px; right:10px; transform:scaleX(1);}
-  .tr{top:10px; left:10px; transform:scaleX(-1);}
-  .bl{bottom:10px; right:10px; transform:scaleY(-1);}
-  .br{bottom:10px; left:10px; transform:scale(-1,-1);}
+  .frame svg{width:100%;height:100%;}
+  .frame rect{
+    fill:none;
+    stroke:var(--gold);
+    stroke-dasharray:2000;
+    stroke-dashoffset:2000;
+    animation:draw 2.6s 0.3s cubic-bezier(.65,0,.35,1) forwards;
+  }
+  .frame .outer{stroke-width:1.1;}
+  .frame .inner{stroke-width:.6; opacity:.6; animation-delay:.6s;}
+  @keyframes draw{ to{ stroke-dashoffset:0; } }
+
+  .content{position:relative; z-index:1;}
+
+  .crest{
+    display:flex;
+    justify-content:center;
+    margin-bottom:18px;
+    opacity:0;
+    animation:fadeUp .9s ease-out .8s forwards;
+  }
+  .crest svg{width:64px;height:64px;}
 
   .eyebrow{
     text-align:center;
-    font-size:13px;
-    letter-spacing:3px;
-    color:var(--rose-gold);
+    font-size:12.5px;
+    letter-spacing:3.5px;
+    color:var(--gold);
     text-transform:uppercase;
     margin-bottom:6px;
     font-weight:500;
+    opacity:0;
+    animation:fadeUp .9s ease-out .9s forwards;
   }
 
   .verse{
     text-align:center;
     font-family:'Aref Ruqaa', serif;
     font-size:19px;
-    line-height:2.1;
+    line-height:2.15;
     color:var(--wine-deep);
     max-width:440px;
-    margin:18px auto 8px;
+    margin:16px auto 8px;
     opacity:0;
-    animation:fadeUp 1s ease-out .4s forwards;
+    animation:fadeUp .9s ease-out 1s forwards;
   }
   .verse-ref{
     text-align:center;
-    font-size:12px;
-    color:var(--rose-gold);
+    font-size:11.5px;
+    color:var(--gold);
     letter-spacing:1px;
-    margin-bottom:28px;
+    margin-bottom:26px;
     opacity:0;
-    animation:fadeUp 1s ease-out .55s forwards;
+    animation:fadeUp .9s ease-out 1.1s forwards;
   }
 
-  @keyframes fadeUp{
-    from{opacity:0; transform:translateY(10px);}
-    to{opacity:1; transform:translateY(0);}
-  }
+  @keyframes fadeUp{ from{opacity:0; transform:translateY(10px);} to{opacity:1; transform:translateY(0);} }
 
   .divider{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:14px;
-    margin:8px 0 26px;
+    display:flex; align-items:center; justify-content:center; gap:14px;
+    margin:6px 0 24px;
     opacity:0;
-    animation:fadeUp 1s ease-out .65s forwards;
+    animation:fadeUp .9s ease-out 1.2s forwards;
   }
-  .divider .line{
-    height:1px;
-    width:60px;
-    background:linear-gradient(90deg, transparent, var(--rose-gold));
-  }
-  .divider .line.rev{background:linear-gradient(270deg, transparent, var(--rose-gold));}
-  .divider svg{width:20px;height:20px;color:var(--rose-gold);}
+  .divider .line{height:1px; width:56px; background:linear-gradient(90deg, transparent, var(--gold));}
+  .divider .line.rev{background:linear-gradient(270deg, transparent, var(--gold));}
+  .divider svg{width:18px;height:18px;color:var(--gold);}
 
   .invite-line{
-    text-align:center;
-    font-size:15px;
-    color:#6a5a5e;
-    margin-bottom:6px;
+    text-align:center; font-size:14.5px; color:var(--muted);
+    margin-bottom:4px;
     opacity:0;
-    animation:fadeUp 1s ease-out .75s forwards;
+    animation:fadeUp .9s ease-out 1.3s forwards;
   }
 
   .names{
-    text-align:center;
-    margin:14px 0 4px;
+    text-align:center; margin:16px 0 4px;
     opacity:0;
-    animation:fadeUp 1s ease-out .9s forwards;
+    animation:fadeUp .9s ease-out 1.4s forwards;
   }
   .names .groom, .names .bride{
     font-family:'Aref Ruqaa', serif;
-    font-size:44px;
+    font-size:clamp(30px, 7vw, 46px);
     color:var(--wine);
     line-height:1.3;
   }
   .amp{
-    display:block;
-    font-family:'Aref Ruqaa', serif;
-    font-size:26px;
-    color:var(--rose-gold);
-    margin:2px 0;
-  }
-  .bride-placeholder{
-    font-family:'Tajawal',sans-serif;
-    font-size:16px;
-    color:#a98a6a;
-    border-bottom:1px dashed var(--rose-gold-light);
-    padding-bottom:2px;
+    display:block; font-family:'Aref Ruqaa', serif;
+    font-size:24px; color:var(--gold); margin:2px 0;
   }
 
   .sub-invite{
-    text-align:center;
-    font-size:14.5px;
-    color:#6a5a5e;
-    max-width:420px;
-    margin:18px auto 30px;
-    line-height:1.9;
+    text-align:center; font-size:14px; color:var(--muted);
+    max-width:420px; margin:18px auto 32px; line-height:1.9;
     opacity:0;
-    animation:fadeUp 1s ease-out 1.05s forwards;
+    animation:fadeUp .9s ease-out 1.5s forwards;
   }
 
-  .details{
-    display:flex;
-    justify-content:center;
-    gap:36px;
-    flex-wrap:wrap;
-    margin:0 auto 30px;
+  /* countdown */
+  .countdown{
+    display:flex; justify-content:center; gap:14px;
+    margin:0 auto 34px;
     opacity:0;
-    animation:fadeUp 1s ease-out 1.2s forwards;
+    animation:fadeUp .9s ease-out 1.6s forwards;
+  }
+  .cd-box{
+    text-align:center;
+    background:linear-gradient(180deg,#fff,var(--cream));
+    border:1px solid var(--gold-light);
+    border-radius:6px;
+    padding:10px 4px;
+    width:64px;
+  }
+  .cd-box .num{
+    font-size:22px; font-weight:700; color:var(--wine);
+    font-variant-numeric: tabular-nums;
+  }
+  .cd-box .unit{font-size:10px; color:var(--gold); letter-spacing:.5px; margin-top:2px;}
+
+  /* details band */
+  .details{
+    display:flex; justify-content:center; gap:0;
+    margin:0 auto 30px;
+    border-top:1px solid var(--gold-light);
+    border-bottom:1px solid var(--gold-light);
+    padding:24px 0;
+    opacity:0;
+    animation:fadeUp .9s ease-out 1.7s forwards;
   }
   .detail{
-    text-align:center;
-    min-width:120px;
+    text-align:center; flex:1; min-width:0;
+    padding:0 12px;
+    position:relative;
   }
-  .detail .icon{
-    width:30px;height:30px;
-    margin:0 auto 8px;
-    color:var(--rose-gold);
+  .detail:not(:last-child)::after{
+    content:'';
+    position:absolute; top:4px; bottom:4px; left:0;
+    width:1px; background:var(--gold-light);
   }
+  .detail .icon{width:26px;height:26px; margin:0 auto 8px; color:var(--gold);}
   .detail .icon svg{width:100%;height:100%;}
-  .detail .label{
-    font-size:11px;
-    letter-spacing:2px;
-    color:var(--rose-gold);
-    text-transform:uppercase;
-    margin-bottom:4px;
+  .detail .label{font-size:10.5px; letter-spacing:1.8px; color:var(--gold); text-transform:uppercase; margin-bottom:5px;}
+  .detail .value{font-size:15px; font-weight:500; color:var(--wine-deep); line-height:1.5;}
+
+  /* action buttons */
+  .actions{
+    display:flex; justify-content:center; gap:12px; flex-wrap:wrap;
+    margin:0 auto 32px;
+    opacity:0;
+    animation:fadeUp .9s ease-out 1.8s forwards;
   }
-  .detail .value{
-    font-size:16px;
-    font-weight:500;
-    color:var(--wine-deep);
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    font-family:'Tajawal',sans-serif;
+    font-size:13.5px; font-weight:500;
+    padding:12px 22px;
+    border-radius:30px;
+    text-decoration:none;
+    cursor:pointer;
+    transition:transform .2s ease, box-shadow .2s ease;
+    border:1px solid var(--gold);
   }
-  .detail .value.placeholder{
-    color:#a98a6a;
-    font-weight:400;
-    border-bottom:1px dashed var(--rose-gold-light);
-    display:inline-block;
-    padding-bottom:2px;
-  }
+  .btn:hover{ transform:translateY(-2px); }
+  .btn svg{width:16px;height:16px;}
+  .btn-primary{ background:var(--wine); color:#fff; border-color:var(--wine); box-shadow:0 8px 20px -8px rgba(92,31,46,.6); }
+  .btn-primary:hover{ box-shadow:0 12px 24px -8px rgba(92,31,46,.7); }
+  .btn-ghost{ background:transparent; color:var(--wine); }
+  .btn-ghost:hover{ background:rgba(184,144,95,.08); }
 
   .footer-note{
-    text-align:center;
-    font-size:13px;
-    color:#8a7a7e;
-    margin-top:8px;
+    text-align:center; font-size:12.5px; color:#8a7a7e; margin-top:4px;
     opacity:0;
-    animation:fadeUp 1s ease-out 1.35s forwards;
+    animation:fadeUp .9s ease-out 1.9s forwards;
   }
-  .footer-note b{color:var(--wine);font-weight:500;}
+  .footer-note b{color:var(--wine); font-weight:500;}
 
   .seal{
-    display:flex;
-    justify-content:center;
-    margin-top:26px;
+    display:flex; justify-content:center; margin-top:24px;
     opacity:0;
-    animation:fadeUp 1s ease-out 1.5s forwards;
+    animation:fadeUp .9s ease-out 2s forwards;
   }
-  .seal svg{width:54px;height:54px;}
+  .seal svg{width:50px;height:50px;}
 
   /* floating petals */
   .petal{
-    position:fixed;
-    top:-40px;
-    width:14px;
-    height:14px;
-    background:radial-gradient(circle at 30% 30%, var(--blush), var(--rose-gold));
+    position:fixed; top:-40px; width:14px; height:14px;
+    background:radial-gradient(circle at 30% 30%, var(--blush), var(--gold));
     border-radius:0 60% 0 60%;
-    opacity:.75;
-    pointer-events:none;
-    animation-name:fall;
-    animation-timing-function:linear;
-    animation-iteration-count:infinite;
+    opacity:.7; pointer-events:none;
+    animation-name:fall; animation-timing-function:linear; animation-iteration-count:infinite;
   }
-  @keyframes fall{
-    to{ transform: translateY(105vh) rotate(360deg); opacity:0; }
-  }
+  @keyframes fall{ to{ transform: translateY(105vh) rotate(360deg); opacity:0; } }
 
   @media (prefers-reduced-motion: reduce){
-    .card, .verse, .verse-ref, .divider, .invite-line, .names, .sub-invite, .details, .footer-note, .seal{
-      animation:none !important; opacity:1 !important; transform:none !important;
-    }
+    *{animation:none !important; opacity:1 !important; transform:none !important;}
+    .frame rect{stroke-dashoffset:0 !important;}
     .petal{display:none;}
   }
 
   @media (max-width:480px){
-    .card{padding:40px 20px 34px;}
-    .names .groom, .names .bride{font-size:32px;}
-    .verse{font-size:16px;}
-    .details{gap:22px;}
+    .card{padding:48px 22px 40px;}
+    .details{flex-wrap:wrap; row-gap:20px;}
+    .detail{flex:1 1 45%; min-width:45%;}
+    .detail:nth-child(2)::after{display:none;}
+    .cd-box{width:54px;}
   }
 </style>
 </head>
@@ -260,78 +274,187 @@
 
 <div class="card">
 
-  <div class="corner tl"><svg viewBox="0 0 78 78" fill="none"><path d="M4 74 C4 40 40 4 74 4" stroke="#c9a17a" stroke-width="1.4"/><path d="M4 60 C4 34 34 4 60 4" stroke="#c9a17a" stroke-width="1"/><circle cx="4" cy="74" r="3" fill="#c9a17a"/><circle cx="74" cy="4" r="3" fill="#c9a17a"/></svg></div>
-  <div class="corner tr"><svg viewBox="0 0 78 78" fill="none"><path d="M4 74 C4 40 40 4 74 4" stroke="#c9a17a" stroke-width="1.4"/><path d="M4 60 C4 34 34 4 60 4" stroke="#c9a17a" stroke-width="1"/><circle cx="4" cy="74" r="3" fill="#c9a17a"/><circle cx="74" cy="4" r="3" fill="#c9a17a"/></svg></div>
-  <div class="corner bl"><svg viewBox="0 0 78 78" fill="none"><path d="M4 74 C4 40 40 4 74 4" stroke="#c9a17a" stroke-width="1.4"/><path d="M4 60 C4 34 34 4 60 4" stroke="#c9a17a" stroke-width="1"/><circle cx="4" cy="74" r="3" fill="#c9a17a"/><circle cx="74" cy="4" r="3" fill="#c9a17a"/></svg></div>
-  <div class="corner br"><svg viewBox="0 0 78 78" fill="none"><path d="M4 74 C4 40 40 4 74 4" stroke="#c9a17a" stroke-width="1.4"/><path d="M4 60 C4 34 34 4 60 4" stroke="#c9a17a" stroke-width="1"/><circle cx="4" cy="74" r="3" fill="#c9a17a"/><circle cx="74" cy="4" r="3" fill="#c9a17a"/></svg></div>
-
-  <div class="eyebrow">بسم الله الرحمن الرحيم</div>
-
-  <p class="verse">
-    وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا<br>
-    وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً
-  </p>
-  <div class="verse-ref">سورة الروم - آية ٢١</div>
-
-  <div class="divider">
-    <span class="line"></span>
-    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7.5-4.6-10-9.2C.4 8.4 2.3 5 6 5c2 0 3.6 1.1 4.5 2.7C11.4 6.1 13 5 15 5c3.7 0 5.6 3.4 4 6.8C19.5 16.4 12 21 12 21z"/></svg>
-    <span class="line rev"></span>
-  </div>
-
-  <p class="invite-line">يتشرف السيد / سامي وعائلته الكريمة بدعوتكم لحضور حفل زفاف نجلهم</p>
-
-  <div class="names">
-    <span class="groom">أحمد سامي</span>
-    <span class="amp">و</span>
-    <span class="bride-placeholder">[اسم العروسة]</span>
-  </div>
-
-  <p class="sub-invite">
-    وذلك مساء يوم يسعدنا حضوركم لمشاركتنا أجمل لحظات الفرح والسعادة،
-    فوجودكم يزيد الفرحة بهجة ويُتوّج المناسبة بأحبتها
-  </p>
-
-  <div class="details">
-    <div class="detail">
-      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg></div>
-      <div class="label">التاريخ</div>
-      <div class="value placeholder">[اليوم والتاريخ]</div>
-    </div>
-    <div class="detail">
-      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
-      <div class="label">الساعة</div>
-      <div class="value placeholder">[الموعد]</div>
-    </div>
-    <div class="detail">
-      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-6.5-7-11a7 7 0 1 1 14 0c0 4.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
-      <div class="label">المكان</div>
-      <div class="value placeholder">[اسم القاعة / المكان]</div>
-    </div>
-  </div>
-
-  <p class="footer-note">حضوركم يُشرّفنا ويُسعدنا <b>ولكم منا خالص التحية والتقدير</b></p>
-
-  <div class="seal">
-    <svg viewBox="0 0 60 60" fill="none">
-      <circle cx="30" cy="30" r="27" stroke="#c9a17a" stroke-width="1.2"/>
-      <circle cx="30" cy="30" r="21" stroke="#c9a17a" stroke-width=".7"/>
-      <text x="30" y="35" text-anchor="middle" font-family="Aref Ruqaa, serif" font-size="14" fill="#5c1f2e">فرحتنا</text>
+  <div class="frame">
+    <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+      <rect class="outer" x="1" y="1" width="98" height="98" rx="2"/>
+      <rect class="inner" x="3.2" y="3.2" width="93.6" height="93.6" rx="1.5"/>
     </svg>
   </div>
 
+  <div class="content">
+
+    <div class="crest">
+      <svg viewBox="0 0 64 64" fill="none">
+        <circle cx="32" cy="32" r="30" stroke="#b8905f" stroke-width="1"/>
+        <circle cx="32" cy="32" r="24" stroke="#b8905f" stroke-width=".6"/>
+        <text x="32" y="41" text-anchor="middle" font-family="Aref Ruqaa, serif" font-size="26" fill="#5c1f2e">أ</text>
+      </svg>
+    </div>
+
+    <div class="eyebrow">بسم الله الرحمن الرحيم</div>
+
+    <p class="verse">
+      وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا<br>
+      وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً
+    </p>
+    <div class="verse-ref">سورة الروم - آية ٢١</div>
+
+    <div class="divider">
+      <span class="line"></span>
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7.5-4.6-10-9.2C.4 8.4 2.3 5 6 5c2 0 3.6 1.1 4.5 2.7C11.4 6.1 13 5 15 5c3.7 0 5.6 3.4 4 6.8C19.5 16.4 12 21 12 21z"/></svg>
+      <span class="line rev"></span>
+    </div>
+
+    <p class="invite-line">يتشرف السيد / سامي وعائلته الكريمة بدعوتكم لحضور حفل زفاف نجلهم</p>
+
+    <div class="names">
+      <span class="groom" id="groomName">أحمد سامي</span>
+      <span class="amp">و</span>
+      <span class="bride" id="brideName">ميرهان جمال</span>
+    </div>
+
+    <p class="sub-invite">
+      يسعدنا حضوركم لمشاركتنا أجمل لحظات الفرح والسعادة，
+      فوجودكم يزيد الفرحة بهجة ويُتوّج المناسبة بأحبتها
+    </p>
+
+    <div class="countdown" id="countdown">
+      <div class="cd-box"><div class="num" id="cd-days">--</div><div class="unit">يوم</div></div>
+      <div class="cd-box"><div class="num" id="cd-hours">--</div><div class="unit">ساعة</div></div>
+      <div class="cd-box"><div class="num" id="cd-mins">--</div><div class="unit">دقيقة</div></div>
+      <div class="cd-box"><div class="num" id="cd-secs">--</div><div class="unit">ثانية</div></div>
+    </div>
+
+    <div class="details">
+      <div class="detail">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg></div>
+        <div class="label">التاريخ</div>
+        <div class="value" id="dateDisplay">الأحد 9 أغسطس ٢٠٢٦</div>
+      </div>
+      <div class="detail">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+        <div class="label">الساعة</div>
+        <div class="value" id="timeDisplay">٩:٠٠ مساءً</div>
+      </div>
+      <div class="detail">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-6.5-7-11a7 7 0 1 1 14 0c0 4.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+        <div class="label">المكان</div>
+        <div class="value" id="venueDisplay">قاعة الزهرة , نادي المعلمين , سيدي جابر</div>
+      </div>
+    </div>
+
+    <div class="actions">
+      <a class="btn btn-primary" id="rsvpBtn" href="#">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A11 11 0 0 0 3.9 17.6L2 22l4.6-1.8A11 11 0 1 0 20.5 3.5z"/></svg>
+        تأكيد الحضور
+      </a>
+      <a class="btn btn-ghost" id="mapBtn" href="#" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.5-7-11a7 7 0 1 1 14 0c0 4.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        الاتجاهات
+      </a>
+      <button class="btn btn-ghost" id="calBtn" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg>
+        أضف للتقويم
+      </button>
+    </div>
+
+    <p class="footer-note">حضوركم يُشرّفنا ويُسعدنا <b>ولكم منا خالص التحية والتقدير</b></p>
+
+    <div class="seal">
+      <svg viewBox="0 0 60 60" fill="none">
+        <circle cx="30" cy="30" r="27" stroke="#b8905f" stroke-width="1.1"/>
+        <circle cx="30" cy="30" r="21" stroke="#b8905f" stroke-width=".6"/>
+        <text x="30" y="35" text-anchor="middle" font-family="Aref Ruqaa, serif" font-size="14" fill="#5c1f2e">فرحتنا</text>
+      </svg>
+    </div>
+
+  </div>
 </div>
 
 <script>
-  const colors = ['#c9a17a','#e6cba8','#e9c9c2','#5c1f2e'];
-  for(let i=0;i<18;i++){
+  /* ============================================================
+     عدّل البيانات هنا فقط، والصفحة هتحدث نفسها تلقائيًا في كل مكان
+     (العدّاد، زر التقويم، زر الخرائط، زر الواتساب)
+     ============================================================ */
+  const CONFIG = {
+    groomName:  "أحمد سامي",
+    brideName:  "ميرهان جمال",
+    dateDisplay: "الأحد 9 أغسطس ٢٠٢٦",
+    timeDisplay: "٩:٠٠ مساءً",
+    venueDisplay: "قاعة الزهرة , نادي المعلمين , سيدي جابر",
+    // بصيغة ISO عشان يتحسب بيها العدّاد وملف التقويم (سنة-شهر-يوم تاعة ساعة:دقيقة)
+    isoDateTime: "2026-08-09T21:00:00",
+    // رابط الموقع على خرائط جوجل (دوس على المكان في خرائط جوجل وانسخ الرابط)
+    mapsUrl: "https://maps.google.com",
+    // رقم واتساب لتأكيد الحضور (بالصيغة الدولية بدون + أو صفر البداية، مثال: مصر 20xxxxxxxxxx)
+    whatsappNumber: "20xxxxxxxxxx"
+  };
+
+  document.getElementById('groomName').textContent = CONFIG.groomName;
+  document.getElementById('brideName').textContent = CONFIG.brideName;
+  document.getElementById('dateDisplay').textContent = CONFIG.dateDisplay;
+  document.getElementById('timeDisplay').textContent = CONFIG.timeDisplay;
+  document.getElementById('venueDisplay').textContent = CONFIG.venueDisplay;
+  document.title = "دعوة زفاف - " + CONFIG.groomName;
+
+  // زر الخرائط
+  document.getElementById('mapBtn').href = CONFIG.mapsUrl;
+
+  // زر واتساب لتأكيد الحضور
+  const waMsg = encodeURIComponent("تشرفت بدعوتكم، أؤكد حضوري لحفل زفاف " + CONFIG.groomName + " و" + CONFIG.brideName);
+  document.getElementById('rsvpBtn').href = "https://wa.me/" + CONFIG.whatsappNumber + "?text=" + waMsg;
+  document.getElementById('rsvpBtn').target = "_blank";
+  document.getElementById('rsvpBtn').rel = "noopener";
+
+  // زر إضافة للتقويم (ملف ICS)
+  document.getElementById('calBtn').addEventListener('click', function(){
+    const start = CONFIG.isoDateTime.replace(/[-:]/g,'');
+    const startDate = new Date(CONFIG.isoDateTime);
+    const endDate = new Date(startDate.getTime() + 3*60*60*1000);
+    const end = endDate.toISOString().replace(/[-:]/g,'').split('.')[0];
+    const ics = [
+      "BEGIN:VCALENDAR","VERSION:2.0","BEGIN:VEVENT",
+      "SUMMARY:حفل زفاف " + CONFIG.groomName + " و" + CONFIG.brideName,
+      "DTSTART:" + start.split('.')[0],
+      "DTEND:" + end,
+      "LOCATION:" + CONFIG.venueDisplay,
+      "DESCRIPTION:يسعدنا حضوركم لحفل الزفاف",
+      "END:VEVENT","END:VCALENDAR"
+    ].join("\r\n");
+    const blob = new Blob([ics], {type:"text/calendar"});
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = "wedding-invite.ics";
+    link.click();
+  });
+
+  // العدّاد التنازلي
+  const target = new Date(CONFIG.isoDateTime).getTime();
+  function tick(){
+    const now = Date.now();
+    let diff = Math.max(0, target - now);
+    const d = Math.floor(diff/86400000);
+    const h = Math.floor((diff%86400000)/3600000);
+    const m = Math.floor((diff%3600000)/60000);
+    const s = Math.floor((diff%60000)/1000);
+    document.getElementById('cd-days').textContent = d;
+    document.getElementById('cd-hours').textContent = String(h).padStart(2,'0');
+    document.getElementById('cd-mins').textContent = String(m).padStart(2,'0');
+    document.getElementById('cd-secs').textContent = String(s).padStart(2,'0');
+  }
+  tick();
+  setInterval(tick, 1000);
+
+  // بتلات متساقطة
+  const colors = ['#b8905f','#e6cba8','#e9c9c2','#5c1f2e'];
+  for(let i=0;i<16;i++){
     const p = document.createElement('div');
     p.className='petal';
     p.style.left = Math.random()*100+'vw';
-    p.style.animationDuration = (8+Math.random()*10)+'s';
+    p.style.animationDuration = (9+Math.random()*10)+'s';
     p.style.animationDelay = (Math.random()*10)+'s';
     p.style.background = 'radial-gradient(circle at 30% 30%, #fff, '+colors[i%colors.length]+')';
-    p.style.width = p.style.height = (8+Math.random()*10)+'px';
+    p.style.width = p.style.height = (7+Math.random()*9)+'px';
     document.body.appendChild(p);
   }
 </script>
