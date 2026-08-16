@@ -3,458 +3,677 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>دعوة قراية فاتحة احمد سامي & ميريهان جمال</title>
+<title>REMO</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 <style>
   :root{
-    --wine:#5c1f2e;
-    --wine-deep:#3c1420;
-    --gold:#b8905f;
-    --gold-light:#e6cba8;
-    --cream:#faf3e9;
-    --ink:#2b1b1f;
-    --muted:#7a6a6e;
-    --blush:#e9c9c2;
+    --plum:#3D1F3B;
+    --plum-deep:#2A1428;
+    --blush:#F3D9DE;
+    --paper:#FBF3EA;
+    --gold:#C9A24B;
+    --rose:#C1697C;
+    --ink:#3A2A33;
   }
-
-  *{margin:0;padding:0;box-sizing:border-box;}
-
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html,body{height:100%;}
   body{
-    min-height:100vh;
+    font-family:'Tajawal', sans-serif;
     background:
-      radial-gradient(circle at 12% 8%, rgba(184,144,95,.16), transparent 42%),
-      radial-gradient(circle at 88% 92%, rgba(92,31,46,.14), transparent 42%),
-      var(--cream);
-    background-image:
-      radial-gradient(circle at 12% 8%, rgba(184,144,95,.16), transparent 42%),
-      radial-gradient(circle at 88% 92%, rgba(92,31,46,.14), transparent 42%),
-      radial-gradient(rgba(92,31,46,.05) 1px, transparent 1px),
-      var(--cream);
-    background-size: auto, auto, 18px 18px, auto;
-    font-family:'Tajawal',sans-serif;
-    color:var(--ink);
+      radial-gradient(circle at 15% 20%, rgba(201,162,75,0.12), transparent 40%),
+      radial-gradient(circle at 85% 80%, rgba(193,105,124,0.15), transparent 45%),
+      var(--plum);
+    min-height:100vh;
     display:flex;
     align-items:center;
     justify-content:center;
-    padding:40px 16px;
     overflow-x:hidden;
-  }
-
-  .card{
-    position:relative;
-    width:100%;
-    max-width:660px;
-    background:linear-gradient(180deg,#fffdfa 0%, var(--cream) 100%);
-    border-radius:4px;
-    padding:60px 44px 52px;
-    box-shadow:0 40px 80px -30px rgba(60,20,32,.4), 0 0 0 1px rgba(184,144,95,.25);
-    opacity:0;
-    transform:translateY(24px);
-    animation:riseIn 1s cubic-bezier(.19,1,.22,1) forwards;
-  }
-
-  @keyframes riseIn{ to{opacity:1; transform:translateY(0);} }
-
-  /* animated hand-drawn double frame */
-  .frame{
-    position:absolute;
-    inset:14px;
-    pointer-events:none;
-  }
-  .frame svg{width:100%;height:100%;}
-  .frame rect{
-    fill:none;
-    stroke:var(--gold);
-    stroke-dasharray:2000;
-    stroke-dashoffset:2000;
-    animation:draw 2.6s 0.3s cubic-bezier(.65,0,.35,1) forwards;
-  }
-  .frame .outer{stroke-width:1.1;}
-  .frame .inner{stroke-width:.6; opacity:.6; animation-delay:.6s;}
-  @keyframes draw{ to{ stroke-dashoffset:0; } }
-
-  .content{position:relative; z-index:1;}
-
-  .crest{
-    display:flex;
-    justify-content:center;
-    margin-bottom:18px;
-    opacity:0;
-    animation:fadeUp .9s ease-out .8s forwards;
-  }
-  .crest svg{width:64px;height:64px;}
-
-  .eyebrow{
-    text-align:center;
-    font-size:12.5px;
-    letter-spacing:3.5px;
-    color:var(--gold);
-    text-transform:uppercase;
-    margin-bottom:6px;
-    font-weight:500;
-    opacity:0;
-    animation:fadeUp .9s ease-out .9s forwards;
-  }
-
-  .verse{
-    text-align:center;
-    font-family:'Aref Ruqaa', serif;
-    font-size:19px;
-    line-height:2.15;
-    color:var(--wine-deep);
-    max-width:440px;
-    margin:16px auto 8px;
-    opacity:0;
-    animation:fadeUp .9s ease-out 1s forwards;
-  }
-  .verse-ref{
-    text-align:center;
-    font-size:11.5px;
-    color:var(--gold);
-    letter-spacing:1px;
-    margin-bottom:26px;
-    opacity:0;
-    animation:fadeUp .9s ease-out 1.1s forwards;
-  }
-
-  @keyframes fadeUp{ from{opacity:0; transform:translateY(10px);} to{opacity:1; transform:translateY(0);} }
-
-  .divider{
-    display:flex; align-items:center; justify-content:center; gap:14px;
-    margin:6px 0 24px;
-    opacity:0;
-    animation:fadeUp .9s ease-out 1.2s forwards;
-  }
-  .divider .line{height:1px; width:56px; background:linear-gradient(90deg, transparent, var(--gold));}
-  .divider .line.rev{background:linear-gradient(270deg, transparent, var(--gold));}
-  .divider svg{width:18px;height:18px;color:var(--gold);}
-
-  .invite-line{
-    text-align:center; font-size:14.5px; color:var(--muted);
-    margin-bottom:4px;
-    opacity:0;
-    animation:fadeUp .9s ease-out 1.3s forwards;
-  }
-
-  .names{
-    text-align:center; margin:16px 0 4px;
-    opacity:0;
-    animation:fadeUp .9s ease-out 1.4s forwards;
-  }
-  .names .groom, .names .bride{
-    font-family:'Aref Ruqaa', serif;
-    font-size:clamp(30px, 7vw, 46px);
-    color:var(--wine);
-    line-height:1.3;
-  }
-  .amp{
-    display:block; font-family:'Aref Ruqaa', serif;
-    font-size:24px; color:var(--gold); margin:2px 0;
-  }
-
-  .sub-invite{
-    text-align:center; font-size:14px; color:var(--muted);
-    max-width:420px; margin:18px auto 32px; line-height:1.9;
-    opacity:0;
-    animation:fadeUp .9s ease-out 1.5s forwards;
-  }
-
-  /* countdown */
-  .countdown{
-    display:flex; justify-content:center; gap:14px;
-    margin:0 auto 34px;
-    opacity:0;
-    animation:fadeUp .9s ease-out 1.6s forwards;
-  }
-  .cd-box{
-    text-align:center;
-    background:linear-gradient(180deg,#fff,var(--cream));
-    border:1px solid var(--gold-light);
-    border-radius:6px;
-    padding:10px 4px;
-    width:64px;
-  }
-  .cd-box .num{
-    font-size:22px; font-weight:700; color:var(--wine);
-    font-variant-numeric: tabular-nums;
-  }
-  .cd-box .unit{font-size:10px; color:var(--gold); letter-spacing:.5px; margin-top:2px;}
-
-  /* details band */
-  .details{
-    display:flex; justify-content:center; gap:0;
-    margin:0 auto 30px;
-    border-top:1px solid var(--gold-light);
-    border-bottom:1px solid var(--gold-light);
-    padding:24px 0;
-    opacity:0;
-    animation:fadeUp .9s ease-out 1.7s forwards;
-  }
-  .detail{
-    text-align:center; flex:1; min-width:0;
-    padding:0 12px;
+    padding:24px 12px;
     position:relative;
   }
-  .detail:not(:last-child)::after{
-    content:'';
-    position:absolute; top:4px; bottom:4px; left:0;
-    width:1px; background:var(--gold-light);
-  }
-  .detail .icon{width:26px;height:26px; margin:0 auto 8px; color:var(--gold);}
-  .detail .icon svg{width:100%;height:100%;}
-  .detail .label{font-size:10.5px; letter-spacing:1.8px; color:var(--gold); text-transform:uppercase; margin-bottom:5px;}
-  .detail .value{font-size:15px; font-weight:500; color:var(--wine-deep); line-height:1.5;}
-
-  /* action buttons */
-  .actions{
-    display:flex; justify-content:center; gap:12px; flex-wrap:wrap;
-    margin:0 auto 32px;
-    opacity:0;
-    animation:fadeUp .9s ease-out 1.8s forwards;
-  }
-  .btn{
-    display:inline-flex; align-items:center; gap:8px;
-    font-family:'Tajawal',sans-serif;
-    font-size:13.5px; font-weight:500;
-    padding:12px 22px;
-    border-radius:30px;
-    text-decoration:none;
-    cursor:pointer;
-    transition:transform .2s ease, box-shadow .2s ease;
-    border:1px solid var(--gold);
-  }
-  .btn:hover{ transform:translateY(-2px); }
-  .btn svg{width:16px;height:16px;}
-  .btn-primary{ background:var(--wine); color:#fff; border-color:var(--wine); box-shadow:0 8px 20px -8px rgba(92,31,46,.6); }
-  .btn-primary:hover{ box-shadow:0 12px 24px -8px rgba(92,31,46,.7); }
-  .btn-ghost{ background:transparent; color:var(--wine); }
-  .btn-ghost:hover{ background:rgba(184,144,95,.08); }
-
-  .footer-note{
-    text-align:center; font-size:12.5px; color:#8a7a7e; margin-top:4px;
-    opacity:0;
-    animation:fadeUp .9s ease-out 1.9s forwards;
-  }
-  .footer-note b{color:var(--wine); font-weight:500;}
-
-  .seal{
-    display:flex; justify-content:center; margin-top:24px;
-    opacity:0;
-    animation:fadeUp .9s ease-out 2s forwards;
-  }
-  .seal svg{width:50px;height:50px;}
 
   /* floating petals */
   .petal{
-    position:fixed; top:-40px; width:14px; height:14px;
-    background:radial-gradient(circle at 30% 30%, var(--blush), var(--gold));
-    border-radius:0 60% 0 60%;
-    opacity:.7; pointer-events:none;
-    animation-name:fall; animation-timing-function:linear; animation-iteration-count:infinite;
+    position:fixed; top:-5vh; font-size:18px; opacity:.55;
+    animation:fall linear infinite; pointer-events:none; z-index:0;
+    color:var(--rose);
   }
-  @keyframes fall{ to{ transform: translateY(105vh) rotate(360deg); opacity:0; } }
+  @keyframes fall{
+    to{ transform:translateY(115vh) rotate(360deg); }
+  }
 
-  @media (prefers-reduced-motion: reduce){
-    *{animation:none !important; opacity:1 !important; transform:none !important;}
-    .frame rect{stroke-dashoffset:0 !important;}
-    .petal{display:none;}
+  .stage{
+    position:relative;
+    width:100%;
+    max-width:520px;
+    z-index:2;
+  }
+
+  /* tab navigation */
+  .tabs{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    margin-bottom:16px;
+  }
+  .tab{
+    background:rgba(251,243,234,0.12);
+    border:1px solid rgba(201,162,75,0.4);
+    color:var(--blush);
+    font-family:'Tajawal';
+    font-size:12.5px;
+    font-weight:700;
+    padding:8px 14px;
+    border-radius:999px;
+    cursor:pointer;
+    transition:all .35s ease;
+    letter-spacing:.3px;
+    white-space:nowrap;
+  }
+  .tab.active{
+    background:var(--gold);
+    color:var(--plum-deep);
+    box-shadow:0 4px 14px rgba(201,162,75,0.4);
+    transform:translateY(-2px);
+  }
+
+  /* card / postcard look */
+  .card-wrap{
+    perspective:1600px;
+    position:relative;
+  }
+  .card{
+    background:var(--paper);
+    border-radius:6px;
+    min-height:560px;
+    position:relative;
+    box-shadow:0 25px 60px rgba(0,0,0,0.45), 0 2px 0 rgba(255,255,255,0.05) inset;
+    padding:38px 32px 32px;
+    display:none;
+    animation:pageIn .55s cubic-bezier(.2,.9,.25,1);
+    overflow:hidden;
+  }
+  .card.show{display:block;}
+  @keyframes pageIn{
+    from{opacity:0; transform:rotateY(-8deg) translateX(24px);}
+    to{opacity:1; transform:rotateY(0) translateX(0);}
+  }
+  .card::before{
+    content:"";
+    position:absolute; inset:10px;
+    border:1px solid rgba(61,31,59,0.15);
+    border-radius:3px;
+    pointer-events:none;
+  }
+  /* torn top edge */
+  .card::after{
+    content:"";
+    position:absolute; top:0; left:0; right:0; height:10px;
+    background:
+      linear-gradient(135deg, var(--plum-deep) 25%, transparent 25%) 0 0/10px 10px,
+      linear-gradient(225deg, var(--plum-deep) 25%, transparent 25%) 0 0/10px 10px;
+    background-color:transparent;
+    opacity:.9;
+  }
+
+  .eyebrow{
+    font-size:11.5px;
+    letter-spacing:2.5px;
+    color:var(--rose);
+    font-weight:700;
+    margin-bottom:6px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+  .eyebrow .line{flex:1; height:1px; background:linear-gradient(90deg, var(--rose), transparent);}
+
+  h1.card-title{
+    font-family:'Amiri', serif;
+    color:var(--plum);
+    font-size:30px;
+    margin-bottom:18px;
+    line-height:1.3;
+  }
+
+  .seal{
+    position:absolute;
+    top:22px; left:26px;
+    width:46px; height:46px;
+    border-radius:50%;
+    background:radial-gradient(circle at 35% 30%, #d98a9a, var(--rose) 70%);
+    color:#fff;
+    display:flex; align-items:center; justify-content:center;
+    font-size:11px; font-weight:700;
+    box-shadow:0 3px 8px rgba(0,0,0,0.3);
+    animation:pulse 2.6s ease-in-out infinite;
+    font-family:'Tajawal';
+  }
+  @keyframes pulse{
+    0%,100%{transform:scale(1);}
+    50%{transform:scale(1.07);}
+  }
+
+  /* PAGE 1 : hero */
+  .hero-name{
+    font-family:'Amiri', serif;
+    font-size:52px;
+    color:var(--plum);
+    text-align:center;
+    margin:28px 0 6px;
+    position:relative;
+  }
+  .hero-name::after{
+    content:"";
+    display:block;
+    width:70px; height:3px;
+    background:var(--gold);
+    margin:14px auto 0;
+    border-radius:2px;
+  }
+  .hero-sub{
+    text-align:center;
+    color:var(--rose);
+    font-weight:700;
+    font-size:15px;
+    margin-top:12px;
+    letter-spacing:.5px;
+  }
+  .birthday-box{
+    margin-top:34px;
+    background:var(--blush);
+    border-radius:14px;
+    padding:20px 18px;
+    text-align:center;
+    border:1px dashed var(--rose);
+  }
+  .birthday-box .label{
+    font-size:12px; color:var(--rose); font-weight:700; letter-spacing:1px; margin-bottom:6px;
+  }
+  .birthday-box .date{
+    font-family:'Amiri', serif;
+    font-size:24px;
+    color:var(--plum);
+  }
+  .hero-note{
+    margin-top:22px;
+    text-align:center;
+    font-size:14px;
+    color:#6b5560;
+    line-height:2;
+  }
+
+  /* editable inputs on page 1 */
+  .field-group{
+    margin-top:22px;
+  }
+  .field-group label{
+    display:block;
+    font-size:12px;
+    color:var(--rose);
+    font-weight:700;
+    letter-spacing:1px;
+    margin-bottom:6px;
+    text-align:center;
+  }
+  .field-group input{
+    display:block;
+    width:100%;
+    text-align:center;
+    background:var(--blush);
+    border:1px dashed var(--rose);
+    border-radius:14px;
+    padding:12px 14px;
+    font-family:'Amiri', serif;
+    font-size:20px;
+    color:var(--plum);
+    outline:none;
+    transition:box-shadow .25s ease;
+  }
+  .field-group input:focus{
+    box-shadow:0 0 0 3px rgba(201,162,75,0.35);
+  }
+  .field-group input::placeholder{
+    color:#b98a97;
+    opacity:.7;
+  }
+  #nameInput{
+    font-size:26px;
+    font-weight:700;
+  }
+  .field-group + .field-group{ margin-top:14px; }
+
+  /* PAGE 2 : movies / PAGE 3: food -> list style */
+  .list-item{
+    display:flex;
+    align-items:flex-start;
+    gap:14px;
+    background:#fff;
+    border:1px solid rgba(61,31,59,0.08);
+    border-radius:12px;
+    padding:14px 16px;
+    margin-bottom:12px;
+    box-shadow:0 4px 10px rgba(61,31,59,0.05);
+    transition:transform .25s ease;
+  }
+  .list-item:hover{ transform:translateX(-4px); }
+  .list-icon{
+    font-size:22px;
+    flex-shrink:0;
+    margin-top:2px;
+  }
+  .list-text b{
+    display:block;
+    color:var(--plum);
+    font-size:15.5px;
+    margin-bottom:2px;
+  }
+  .list-text input{
+    display:block;
+    width:100%;
+    background:transparent;
+    border:none;
+    border-bottom:1.5px dashed rgba(193,105,124,0.5);
+    font-family:'Tajawal';
+    font-weight:700;
+    color:var(--plum);
+    font-size:15.5px;
+    padding:2px 0 4px;
+    margin-bottom:4px;
+    outline:none;
+    transition:border-color .25s ease;
+  }
+  .list-text input::placeholder{
+    color:#c3a7ae;
+    font-weight:500;
+  }
+  .list-text input:focus{
+    border-bottom-color:var(--gold);
+  }
+  .list-text span{
+    color:#7a6a72;
+    font-size:13px;
+    line-height:1.6;
+  }
+  .list-wrap{ margin-top:14px; }
+
+  /* PAGE 4 : joke + closing */
+  .joke-box{
+    background:var(--plum);
+    color:var(--paper);
+    border-radius:14px;
+    padding:22px 20px;
+    margin-top:16px;
+    position:relative;
+  }
+  .joke-box .qmark{
+    font-family:'Amiri', serif;
+    font-size:40px;
+    color:var(--gold);
+    line-height:1;
+  }
+  .joke-box p{
+    font-size:15px;
+    line-height:2;
+    margin-top:8px;
+  }
+  .joke-box .punch{
+    color:var(--gold);
+    font-weight:700;
+  }
+  .closing{
+    margin-top:24px;
+    text-align:center;
+    font-family:'Amiri', serif;
+    font-size:19px;
+    color:var(--plum);
+    line-height:2.1;
+  }
+  .signature{
+    margin-top:16px;
+    text-align:center;
+    font-size:13px;
+    color:var(--rose);
+    font-weight:700;
+    letter-spacing:.5px;
+  }
+  .hearts{
+    text-align:center;
+    margin-top:14px;
+    font-size:20px;
+    letter-spacing:8px;
+  }
+
+  .wa-btn{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    margin:22px auto 0;
+    background:#25D366;
+    color:#fff;
+    border:none;
+    padding:13px 22px;
+    border-radius:999px;
+    font-family:'Tajawal';
+    font-size:14.5px;
+    font-weight:700;
+    cursor:pointer;
+    width:100%;
+    box-shadow:0 6px 16px rgba(37,211,102,0.35);
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .wa-btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 8px 20px rgba(37,211,102,0.45);
+  }
+  .wa-btn svg{ width:20px; height:20px; flex-shrink:0; }
+
+  /* nav arrows */
+  .nav-btns{
+    display:flex;
+    justify-content:space-between;
+    margin-top:18px;
+  }
+  .nav-btns button{
+    background:transparent;
+    border:1px solid rgba(251,243,234,0.35);
+    color:var(--blush);
+    padding:9px 20px;
+    border-radius:999px;
+    font-family:'Tajawal';
+    font-size:13px;
+    font-weight:700;
+    cursor:pointer;
+    transition:all .3s ease;
+  }
+  .nav-btns button:hover:not(:disabled){
+    background:var(--gold);
+    color:var(--plum-deep);
+    border-color:var(--gold);
+  }
+  .nav-btns button:disabled{
+    opacity:.3;
+    cursor:default;
+  }
+
+  .edit-hint{
+    text-align:center;
+    color:rgba(251,243,234,0.45);
+    font-size:11px;
+    margin-top:16px;
   }
 
   @media (max-width:480px){
-    .card{padding:48px 22px 40px;}
-    .details{flex-wrap:wrap; row-gap:20px;}
-    .detail{flex:1 1 45%; min-width:45%;}
-    .detail:nth-child(2)::after{display:none;}
-    .cd-box{width:54px;}
+    .card{padding:30px 20px 24px; min-height:520px;}
+    .hero-name{font-size:40px;}
+    .tab{font-size:11.5px; padding:7px 11px;}
   }
 </style>
 </head>
 <body>
 
-<div class="card">
-
-  <div class="frame">
-    <svg viewBox="0 0 100 100" preserveAspectRatio="none">
-      <rect class="outer" x="1" y="1" width="98" height="98" rx="2"/>
-      <rect class="inner" x="3.2" y="3.2" width="93.6" height="93.6" rx="1.5"/>
-    </svg>
+<div class="stage">
+  <div class="tabs" id="tabs">
+    <button class="tab active" data-page="0">ريهام</button>
+    <button class="tab" data-page="1">🎬 أفلام</button>
+    <button class="tab" data-page="2">🍽️ أكل</button>
+    <button class="tab" data-page="3">🎁 نكتة</button>
   </div>
 
-  <div class="content">
+  <div class="card-wrap">
 
-    <div class="crest">
-      <svg viewBox="0 0 64 64" fill="none">
-        <circle cx="32" cy="32" r="30" stroke="#b8905f" stroke-width="1"/>
-        <circle cx="32" cy="32" r="24" stroke="#b8905f" stroke-width=".6"/>
-        <text x="32" y="41" text-anchor="middle" font-family="Aref Ruqaa, serif" font-size="26" fill="#5c1f2e">أ</text>
-      </svg>
-    </div>
+    <!-- PAGE 1 -->
+    <div class="card show" data-page="0">
+      <div class="seal" id="sealText">لريهام</div>
+      <div class="eyebrow"><span class="line"></span> بطاقة تذكارية <span class="line"></span></div>
+      <div class="hero-name" id="heroName">ريهام</div>
+      <div class="hero-sub">أميرة البيت وأجمل ست في حياتنا 🌸</div>
 
-    <div class="eyebrow">بسم الله الرحمن الرحيم</div>
-
-    <p class="verse">
-      وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا<br>
-      وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً
-    </p>
-    <div class="verse-ref">سورة الروم - آية ٢١</div>
-
-    <div class="divider">
-      <span class="line"></span>
-      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7.5-4.6-10-9.2C.4 8.4 2.3 5 6 5c2 0 3.6 1.1 4.5 2.7C11.4 6.1 13 5 15 5c3.7 0 5.6 3.4 4 6.8C19.5 16.4 12 21 12 21z"/></svg>
-      <span class="line rev"></span>
-    </div>
-
-    <p class="invite-line">يتشرف السيد / سامي وعائلته الكريمة بدعوتكم لحضور قراية فاتحة نجلهم</p>
-
-    <div class="names">
-      <span class="groom" id="groomName">أحمد سامي</span>
-      <span class="amp">و</span>
-      <span class="bride" id="brideName">ميرهان جمال</span>
-    </div>
-
-    <p class="sub-invite">
-      يسعدنا حضوركم لمشاركتنا أجمل لحظات الفرح والسعادة，
-      فوجودكم يزيد الفرحة بهجة ويُتوّج المناسبة بأحبتها
-    </p>
-
-    <div class="countdown" id="countdown">
-      <div class="cd-box"><div class="num" id="cd-days">--</div><div class="unit">يوم</div></div>
-      <div class="cd-box"><div class="num" id="cd-hours">--</div><div class="unit">ساعة</div></div>
-      <div class="cd-box"><div class="num" id="cd-mins">--</div><div class="unit">دقيقة</div></div>
-      <div class="cd-box"><div class="num" id="cd-secs">--</div><div class="unit">ثانية</div></div>
-    </div>
-
-    <div class="details">
-      <div class="detail">
-        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg></div>
-        <div class="label">التاريخ</div>
-        <div class="value" id="dateDisplay">الأحد 9 أغسطس ٢٠٢٦</div>
+      <div class="field-group">
+        <label for="nameInput">اكتب الاسم</label>
+        <input type="text" id="nameInput" placeholder="اسمك هنا يا ريمو" value="ريهام" maxlength="30">
       </div>
-      <div class="detail">
-        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
-        <div class="label">الساعة</div>
-        <div class="value" id="timeDisplay">٩:٠٠ مساءً</div>
+
+      <div class="field-group">
+        <label for="dobInput">اختار تاريخ الميلاد</label>
+        <input type="date" id="dobInput">
       </div>
-      <div class="detail">
-        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-6.5-7-11a7 7 0 1 1 14 0c0 4.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
-        <div class="label">المكان</div>
-        <div class="value" id="venueDisplay">قاعة روز , نادي المعلمين , سيدي جابر</div>
+
+      <div class="birthday-box">
+        <div class="label">تاريخ الميلاد</div>
+        <div class="date" id="dobDisplay">اختاري التاريخ من فوق ↑</div>
+      </div>
+
+      <p class="hero-note" id="heroNote">
+        شكرا للقدر اللى خلاني اتعرف عليكي .<br>
+        💛
+      </p>
+    </div>
+
+    <!-- PAGE 2: MOVIES -->
+    <div class="card" data-page="1">
+      <div class="eyebrow"><span class="line"></span> ايه افلامك المفضلة <span class="line"></span></div>
+      <h1 class="card-title">وقت السينما 🎬</h1>
+      <div class="list-wrap">
+        <div class="list-item">
+          <div class="list-icon">🎥</div>
+          <div class="list-text">
+            <input type="text" placeholder="اكتبي اسم الفيلم الأول">
+            <span>فيلمها المفضل رقم واحد</span>
+          </div>
+        </div>
+        <div class="list-item">
+          <div class="list-icon">🍿</div>
+          <div class="list-text">
+            <input type="text" placeholder="اكتبي اسم الفيلم التاني">
+            <span>فيلم تاني بتحبه</span>
+          </div>
+        </div>
+        <div class="list-item">
+          <div class="list-icon">💫</div>
+          <div class="list-text">
+            <input type="text" placeholder="اكتبي اسم الفيلم التالت">
+            <span>وممكن تضيفي أكتر لو حابة</span>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="actions">
-      <a class="btn btn-primary" id="rsvpBtn" href="#">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A11 11 0 0 0 3.9 17.6L2 22l4.6-1.8A11 11 0 1 0 20.5 3.5z"/></svg>
-        تأكيد الحضور
-      </a>
-      <a class="btn btn-ghost" id="mapBtn" href="#" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.5-7-11a7 7 0 1 1 14 0c0 4.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
-        الاتجاهات
-      </a>
-      <button class="btn btn-ghost" id="calBtn" type="button">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg>
-        أضف للتقويم
+    <!-- PAGE 3: FOOD -->
+    <div class="card" data-page="2">
+      <div class="eyebrow"><span class="line"></span> ايه اكلاتك المفضلة <span class="line"></span></div>
+      <h1 class="card-title">ريمو 🍽️</h1>
+      <div class="list-wrap">
+        <div class="list-item">
+          <div class="list-icon">🍝</div>
+          <div class="list-text">
+            <input type="text" placeholder="اكتبي الأكلة الأولى">
+            <span>أكلتها اللي مفيش زيها</span>
+          </div>
+        </div>
+        <div class="list-item">
+          <div class="list-icon">🍰</div>
+          <div class="list-text">
+            <input type="text" placeholder="اكتبي الحلو المفضل">
+            <span>حلوها اللي مبتقاومهوش</span>
+          </div>
+        </div>
+        <div class="list-item">
+          <div class="list-icon">☕</div>
+          <div class="list-text">
+            <input type="text" placeholder="اكتبي مشروبها المفضل">
+            <span>مشروبها في أي وقت</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PAGE 4: JOKE + CLOSING -->
+    <div class="card" data-page="3">
+      <div class="eyebrow"><span class="line"></span> ضحكة قبل الختام <span class="line"></span></div>
+      <h1 class="card-title">نكتة على ريهام 😄</h1>
+
+      <div class="joke-box">
+        <div class="qmark">"</div>
+        <p>
+          واحد سأل ريهام: "إيه أكتر حاجة بتحبيها في الدنيا؟"<br>
+          قالتله: "إني محدش يزعّق عليا الصبح."<br>
+          قالها: "طب لو حد زعّق عليكي؟"<br>
+          قالتله: <span class="punch">"يبقى مش هعرفه لحد بعد القهوة الأولانية 😂"</span>
+        </p>
+      </div>
+
+      <div class="closing">
+        يا ريهام، مهما قولت يفضل قليل في حقك.<br>
+        نورك في الشركة مالوش عمر يخلص،<br>
+        وربنا يخليكي لينا ويسعدك دايمًا.
+      </div>
+
+      <div class="hearts">💛 🌸 💛</div>
+      <div class="signature">بكل الحب —ياسين خان</div>
+
+      <button class="wa-btn" id="waBtn">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.32A8.86 8.86 0 0 0 12.05 4c-4.9 0-8.9 3.99-8.9 8.9 0 1.57.41 3.1 1.19 4.44L3 21l3.77-1.32a8.87 8.87 0 0 0 4.27 1.09h.01c4.9 0 8.9-3.99 8.9-8.9a8.86 8.86 0 0 0-2.35-6.55zm-5.55 13.7h-.01a7.4 7.4 0 0 1-3.77-1.03l-.27-.16-2.8.98.94-2.73-.18-.28a7.4 7.4 0 0 1-1.14-3.98c0-4.09 3.33-7.42 7.43-7.42a7.4 7.4 0 0 1 7.42 7.43c0 4.09-3.33 7.19-7.62 7.19zm4.06-5.56c-.22-.11-1.31-.65-1.52-.72-.2-.08-.35-.11-.5.11-.15.22-.57.72-.7.87-.13.15-.26.16-.48.05-.22-.11-.94-.35-1.79-1.11-.66-.59-1.11-1.32-1.24-1.54-.13-.22-.01-.34.1-.45.1-.1.22-.26.33-.39.11-.13.15-.22.22-.37.07-.15.04-.28-.02-.39-.06-.11-.5-1.21-.69-1.66-.18-.43-.37-.38-.5-.38-.13-.01-.28-.01-.43-.01a.83.83 0 0 0-.6.28c-.21.22-.79.77-.79 1.87s.81 2.17.92 2.32c.11.15 1.6 2.44 3.87 3.42.54.23.96.37 1.29.48.54.17 1.03.15 1.42.09.43-.06 1.31-.53 1.5-1.05.18-.51.18-.95.13-1.05-.05-.1-.2-.16-.42-.27z"/></svg>
+        SUBMET
       </button>
     </div>
 
-    <p class="footer-note">حضوركم يُشرّفنا ويُسعدنا <b>ولكم منا خالص التحية والتقدير</b></p>
-
-    <div class="seal">
-      <svg viewBox="0 0 60 60" fill="none">
-        <circle cx="30" cy="30" r="27" stroke="#b8905f" stroke-width="1.1"/>
-        <circle cx="30" cy="30" r="21" stroke="#b8905f" stroke-width=".6"/>
-        <text x="30" y="35" text-anchor="middle" font-family="Aref Ruqaa, serif" font-size="14" fill="#5c1f2e">فرحتنا</text>
-      </svg>
-    </div>
-
   </div>
+
+  <div class="nav-btns">
+    <button id="prevBtn">◀ السابق</button>
+    <button id="nextBtn">التالي ▶</button>
+  </div>
+
+  <div class="edit-hint">ربنا يحفظك وربنا يبعد عنك كل شر يارب</div>
 </div>
 
 <script>
-  /* ============================================================
-     عدّل البيانات هنا فقط، والصفحة هتحدث نفسها تلقائيًا في كل مكان
-     (العدّاد، زر التقويم، زر الخرائط، زر الواتساب)
-     ============================================================ */
-  const CONFIG = {
-    groomName:  "أحمد سامي",
-    brideName:  "ميرهان جمال",
-    dateDisplay: "الأحد 9 أغسطس ٢٠٢٦",
-    timeDisplay: "٩:٠٠ مساءً",
-    venueDisplay: "قاعة روز , نادي المعلمين , سيدي جابر",
-    // بصيغة ISO عشان يتحسب بيها العدّاد وملف التقويم (سنة-شهر-يوم تاعة ساعة:دقيقة)
-    isoDateTime: "2026-08-09T21:00:00",
-    // رابط الموقع على خرائط جوجل (دوس على المكان في خرائط جوجل وانسخ الرابط)
-    mapsUrl: "https://maps.google.com",
-    // رقم واتساب لتأكيد الحضور (بالصيغة الدولية بدون + أو صفر البداية، مثال: مصر 20xxxxxxxxxx)
-    whatsappNumber: "201067605908"
-  };
+  const cards = document.querySelectorAll('.card');
+  const tabs = document.querySelectorAll('.tab');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  let current = 0;
+  const total = cards.length;
 
-  document.getElementById('groomName').textContent = CONFIG.groomName;
-  document.getElementById('brideName').textContent = CONFIG.brideName;
-  document.getElementById('dateDisplay').textContent = CONFIG.dateDisplay;
-  document.getElementById('timeDisplay').textContent = CONFIG.timeDisplay;
-  document.getElementById('venueDisplay').textContent = CONFIG.venueDisplay;
-  document.title = "دعوة قراية الفاتحة - " + CONFIG.groomName;
+  function goTo(idx){
+    current = Math.max(0, Math.min(total-1, idx));
+    cards.forEach(c => c.classList.toggle('show', +c.dataset.page === current));
+    tabs.forEach(t => t.classList.toggle('active', +t.dataset.page === current));
+    prevBtn.disabled = current === 0;
+    nextBtn.disabled = current === total-1;
+  }
 
-  // زر الخرائط
-  document.getElementById('mapBtn').href = CONFIG.mapsUrl;
+  tabs.forEach(t => t.addEventListener('click', () => goTo(+t.dataset.page)));
+  prevBtn.addEventListener('click', () => goTo(current-1));
+  nextBtn.addEventListener('click', () => goTo(current+1));
+  goTo(0);
 
-  // زر واتساب لتأكيد الحضور
-  const waMsg = encodeURIComponent("تشرفت بدعوتكم، أؤكد حضوري لي قراية الفاتحة " + CONFIG.groomName + " و" + CONFIG.brideName);
-  document.getElementById('rsvpBtn').href = "https://wa.me/" + CONFIG.whatsappNumber + "?text=" + waMsg;
-  document.getElementById('rsvpBtn').target = "_blank";
-  document.getElementById('rsvpBtn').rel = "noopener";
+  // live name + birthday
+  const nameInput = document.getElementById('nameInput');
+  const dobInput = document.getElementById('dobInput');
+  const heroName = document.getElementById('heroName');
+  const sealText = document.getElementById('sealText');
+  const heroNote = document.getElementById('heroNote');
+  const dobDisplay = document.getElementById('dobDisplay');
 
-  // زر إضافة للتقويم (ملف ICS)
-  document.getElementById('calBtn').addEventListener('click', function(){
-    const start = CONFIG.isoDateTime.replace(/[-:]/g,'');
-    const startDate = new Date(CONFIG.isoDateTime);
-    const endDate = new Date(startDate.getTime() + 3*60*60*1000);
-    const end = endDate.toISOString().replace(/[-:]/g,'').split('.')[0];
-    const ics = [
-      "BEGIN:VCALENDAR","VERSION:2.0","BEGIN:VEVENT",
-      "SUMMARY:قراية فاتحة " + CONFIG.groomName + " و" + CONFIG.brideName,
-      "DTSTART:" + start.split('.')[0],
-      "DTEND:" + end,
-      "LOCATION:" + CONFIG.venueDisplay,
-      "DESCRIPTION:يسعدنا حضوركم قراية الفاتحة",
-      "END:VEVENT","END:VCALENDAR"
-    ].join("\r\n");
-    const blob = new Blob([ics], {type:"text/calendar"});
-    const link = document.createElement('a');
-    link.href = URL.createObjectURL(blob);
-    link.download = "wedding-invite.ics";
-    link.click();
+  const arMonths = ['يناير','فبراير','مارس','أبريل','مايو','يونيو','يوليو','أغسطس','سبتمبر','أكتوبر','نوفمبر','ديسمبر'];
+
+  function updateName(){
+    const val = nameInput.value.trim() || 'ريهام';
+    heroName.textContent = val;
+    sealText.textContent = 'لـ' + val;
+    heroNote.innerHTML = `كل سنة و${val} بألف خير، ودايمًا نورها وضحكتها بتملى البيت.<br>الصفحات الجاية فيها كل اللي بتحبه 💛`;
+  }
+
+  function updateDob(){
+    if(!dobInput.value){
+      dobDisplay.textContent = 'اختاري التاريخ من فوق ↑';
+      return;
+    }
+    const d = new Date(dobInput.value + 'T00:00:00');
+    dobDisplay.textContent = `${d.getDate()} ${arMonths[d.getMonth()]} ${d.getFullYear()}`;
+  }
+
+  nameInput.addEventListener('input', updateName);
+  dobInput.addEventListener('change', updateDob);
+  updateName();
+  updateDob();
+
+  // ===== الحفظ التلقائي (يعمل لما تفتحي الملف مباشرة في المتصفح) =====
+  const STORAGE_KEY = 'reham_card_data_v1';
+  const movieInputs = document.querySelectorAll('.card[data-page="1"] input');
+  const foodInputs  = document.querySelectorAll('.card[data-page="2"] input');
+
+  function collectData(){
+    return {
+      name: nameInput.value,
+      dob: dobInput.value,
+      movies: Array.from(movieInputs).map(i => i.value),
+      foods: Array.from(foodInputs).map(i => i.value)
+    };
+  }
+
+  function saveData(){
+    try{
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(collectData()));
+    }catch(e){ /* التخزين مش متاح دلوقتي - هيتم تجاهله بأمان */ }
+  }
+
+  function loadData(){
+    try{
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if(!raw) return;
+      const data = JSON.parse(raw);
+      if(data.name){ nameInput.value = data.name; updateName(); }
+      if(data.dob){ dobInput.value = data.dob; updateDob(); }
+      if(data.movies){ movieInputs.forEach((el,i) => { if(data.movies[i]) el.value = data.movies[i]; }); }
+      if(data.foods){ foodInputs.forEach((el,i) => { if(data.foods[i]) el.value = data.foods[i]; }); }
+    }catch(e){ /* تجاهل أي خطأ في القراءة */ }
+  }
+
+  [nameInput, dobInput, ...movieInputs, ...foodInputs].forEach(el => {
+    el.addEventListener('input', saveData);
+    el.addEventListener('change', saveData);
   });
 
-  // العدّاد التنازلي
-  const target = new Date(CONFIG.isoDateTime).getTime();
-  function tick(){
-    const now = Date.now();
-    let diff = Math.max(0, target - now);
-    const d = Math.floor(diff/86400000);
-    const h = Math.floor((diff%86400000)/3600000);
-    const m = Math.floor((diff%3600000)/60000);
-    const s = Math.floor((diff%60000)/1000);
-    document.getElementById('cd-days').textContent = d;
-    document.getElementById('cd-hours').textContent = String(h).padStart(2,'0');
-    document.getElementById('cd-mins').textContent = String(m).padStart(2,'0');
-    document.getElementById('cd-secs').textContent = String(s).padStart(2,'0');
-  }
-  tick();
-  setInterval(tick, 1000);
+  loadData();
 
-  // بتلات متساقطة
-  const colors = ['#b8905f','#e6cba8','#e9c9c2','#5c1f2e'];
-  for(let i=0;i<16;i++){
+  // ===== إرسال البيانات على واتساب =====
+  const WHATSAPP_NUMBER = '201278583367';
+  const waBtn = document.getElementById('waBtn');
+
+  waBtn.addEventListener('click', () => {
+    const d = collectData();
+    const dobText = dobDisplay.textContent;
+    const movies = d.movies.filter(Boolean);
+    const foods = d.foods.filter(Boolean);
+
+    let msg = `🌸 بطاقة ${d.name || 'ريهام'} التذكارية 🌸\n\n`;
+    msg += `👤 الاسم: ${d.name || '—'}\n`;
+    msg += `🎂 تاريخ الميلاد: ${dobText || '—'}\n\n`;
+    msg += `🎬 الأفلام المفضلة:\n`;
+    msg += movies.length ? movies.map((m,i)=>`${i+1}. ${m}`).join('\n') : '—';
+    msg += `\n\n🍽️ الأكلات المفضلة:\n`;
+    msg += foods.length ? foods.map((f,i)=>`${i+1}. ${f}`).join('\n') : '—';
+    msg += `\n\n💛 تمت التعبئة من بطاقة ريهام التذكارية`;
+
+    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
+    window.open(url, '_blank');
+  });
+
+  // floating petals
+  const petals = ['🌸','🌷','💮','🌺'];
+  for(let i=0;i<14;i++){
     const p = document.createElement('div');
     p.className='petal';
+    p.textContent = petals[Math.floor(Math.random()*petals.length)];
     p.style.left = Math.random()*100+'vw';
-    p.style.animationDuration = (9+Math.random()*10)+'s';
+    p.style.animationDuration = (8+Math.random()*10)+'s';
     p.style.animationDelay = (Math.random()*10)+'s';
-    p.style.background = 'radial-gradient(circle at 30% 30%, #fff, '+colors[i%colors.length]+')';
-    p.style.width = p.style.height = (7+Math.random()*9)+'px';
+    p.style.fontSize = (14+Math.random()*14)+'px';
     document.body.appendChild(p);
   }
 </script>
